@@ -1,0 +1,178 @@
+.mall {
+    margin-top: 40px;
+}
+
+.product-list {
+    /* 商品盒子容器 */
+    .product-box {
+        // width: 200px; /* 盒子宽度 */
+        border: 1px solid #e0e0e0; /* 边框 */
+        border-radius: 8px; /* 圆角 */
+        overflow: hidden; /* 隐藏超出部分 */
+        background-color: #fff; /* 背景色 */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* 动画效果 */
+    }
+    
+    .product-box:hover {
+        transform: translateY(-5px); /* 悬停时上移 */
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* 悬停时阴影加深 */
+    }
+    
+    /* 商品图片 */
+    .product-image {
+        width: 100%;
+        padding-top: 100%; /* 保持正方形 */
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .product-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 图片填充 */
+    }
+    
+    /* 商品信息 */
+    .product-info {
+        padding: 12px;
+        display: flex;
+        justify-content: space-between; /* 左右布局 */
+        align-items: center;
+    }
+    
+    /* 商品名称 */
+    .product-name {
+        font-size: 14px;
+        color: #333;
+        flex: 1; /* 占据剩余空间 */
+        white-space: nowrap; /* 不换行 */
+        overflow: hidden; /* 超出部分隐藏 */
+        text-overflow: ellipsis; /* 显示省略号 */
+    }
+    
+    /* 商品价格 */
+    .product-price {
+        font-size: 16px;
+        color: #ff5000; /* 淘宝红 */
+        font-weight: bold;
+        margin-left: 8px; /* 与名称的间距 */
+    }
+}
+
+.product-detail {
+    /* 商品盒子容器 */
+    .product-box {
+        display: flex;
+        // width: 400px; /* 盒子宽度 */
+        border: 1px solid #e0e0e0; /* 边框 */
+        border-radius: 8px; /* 圆角 */
+        overflow: hidden; /* 隐藏超出部分 */
+        background-color: #fff; /* 背景色 */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+        padding: 16px; /* 内边距 */
+        gap: 16px; /* 图片和信息的间距 */
+    }
+    
+    /* 商品图片 */
+    .product-image {
+        width: 300px; /* 图片宽度 */
+        height: 300px; /* 图片高度 */
+        overflow: hidden;
+        border-radius: 8px; /* 圆角 */
+    }
+    
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 图片填充 */
+    }
+    
+    /* 商品信息 */
+    .product-details {
+        flex: 1; /* 占据剩余空间 */
+        display: flex;
+        flex-direction: column; /* 垂直布局 */
+        gap: 8px; /* 信息之间的间距 */
+    }
+
+    .flex-1 {
+        flex: 1; /* 占据剩余空间 */
+        display: flex;
+        flex-direction: column; /* 垂直布局 */
+        gap: 8px; /* 信息之间的间距 */
+    }
+    
+    /* 标题 */
+    .product-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    /* 价格 */
+    .product-price {
+        font-size: 16px;
+        color: #ff5000; /* 淘宝红 */
+        font-weight: bold;
+    }
+    
+    /* 库存数量 */
+    .product-stock {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    /* 数量选择器 */
+    .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* 按钮和输入框的间距 */
+    }
+    
+    .quantity-btn {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .quantity-btn:hover {
+        background-color: #e0e0e0;
+    }
+    
+    .quantity-input {
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    
+    /* 立即购买按钮 */
+    .buy-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #ff5000; /* 淘宝红 */
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 16px; /* 与数量选择器的间距 */
+    }
+    
+    .buy-button:hover {
+        background-color: #e94e00; /* 悬停时颜色加深 */
+    }
+}
