@@ -16,7 +16,7 @@ function News() {
     
   
     return (
-      <div className="App">
+      <div className="new-main">
         {current === '1' && 
           <div className="">
             {travelData.map((item) => (
@@ -24,10 +24,13 @@ function News() {
                 <div key={item.id} className="travel-item">
                   <h2>{item.title}</h2>
                   <p className='content'>{item.content.slice(0, 50)}...</p>
+                  <div className='travel-item-img-box'>
+                    <img className='travel-item-img'  src={item.img} alt="" />
+                  </div>
                   <div className='row'>
                     <p>日期：{item.date}</p>
                     <p>价格：¥{item.price}</p>
-                    <Button onClick={() => lookDetail(item)}>查看详情</Button>
+                    <Button type='primary' onClick={() => lookDetail(item)}>付费阅读</Button>
                   </div>
                 </div>
               // </Card>

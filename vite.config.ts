@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   css: {
+    modules: {
+      localsConvention: 'camelCase', // 类名转换为驼峰命名
+    },
     preprocessorOptions: {
       less: {
         modifyVars: {
