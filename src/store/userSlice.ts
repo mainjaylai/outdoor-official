@@ -2,7 +2,7 @@ import { createSlice, createSelector } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 export const userSlice = createSlice({
-  name: 'counter',
+  name: 'user',
   initialState: {
     user: {
       id: 0,

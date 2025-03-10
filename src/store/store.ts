@@ -2,11 +2,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './mainSlice';
 import userReducer from './userSlice';
+import carReducer from './carSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    car: carReducer
   },
 });
 
