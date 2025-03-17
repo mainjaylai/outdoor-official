@@ -1,19 +1,25 @@
 import { useState } from 'react'
 import './index.less'; // 引入 Less 文件
 import {travelData} from '../../utils/const'
-import { Card, Button } from "antd";
+import { Card, Button, Modal } from "antd";
+import qrcode from '../../imgs/qrcode.png'
 
 function News() {
     const [count, setCount] = useState(0)
     const [current, setCurrent] = useState('1');
     const [travelInfo, setTravelInfo] = useState<TravelInfo | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const lookDetail = (travelInfo: TravelInfo) => {
       // TODO: 付费
-      setCurrent('2')
-      setTravelInfo(travelInfo)
+      // setCurrent('2')
+      // setTravelInfo(travelInfo)
+      setIsModalOpen(true)
     }
     
+    const handleCancel = () => {
+      setIsModalOpen(false);
+    };
   
     return (
       <div className="new-main">
@@ -49,6 +55,9 @@ function News() {
             </div>
           </div>
         }
+        <Modal title="扫码付费阅读" open={isModalOpen} onCancel={handleCancel} footer={null}>
+          <img style={{width: '100%'}} src={qrcode} alt="" />
+        </Modal>
       </div>
     )
   }

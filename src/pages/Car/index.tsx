@@ -5,6 +5,7 @@ import type { FormProps, InputNumberProps } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCar } from '../../store/carSlice'
 import { productList } from '../../utils/const'
+import qrcode from '../../imgs/qrcode.png'
 
 interface Props {
   navToMall: () => void
@@ -62,6 +63,7 @@ function Car(props: Props) {
     const [current, setCurrent] = useState('1');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [dataSource, setDataSource] = useState<DataType[]>([]);
+    const [isQRCodeModalOpen, setIsQRCodeModalOpen] = useState(false);
 
     useEffect(() => {
       const res = car.map((c) => {
@@ -92,24 +94,29 @@ function Car(props: Props) {
       setIsModalOpen(false);
     };
 
+    const handleQRCodeCancel = () => {
+      setIsQRCodeModalOpen(false);
+    };
+
     const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-        setIsModalOpen(false);
-        const totalAmount = dataSource.reduce((sum, product) => {
-          return sum + product.buyAmount * product.price;
-        }, 0);
-        console.log('Success:', totalAmount);
-        // TODO: 付款
-        messageApi.open({
-          type: 'success',
-          content: '购买成功',
-          duration: 1,
-          onClose: () => setCurrent('1')
-        });
-      };
+      setIsModalOpen(false);
+      setIsQRCodeModalOpen(true)
+      const totalAmount = dataSource.reduce((sum, product) => {
+        return sum + product.buyAmount * product.price;
+      }, 0);
+      console.log('Success:', totalAmount);
+      // TODO: 付款
+      // messageApi.open({
+      //   type: 'success',
+      //   content: '购买成功',
+      //   duration: 1,
+      //   onClose: () => setCurrent('1')
+      // });
+    };
       
-      const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+    const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+      console.log('Failed:', errorInfo);
+    };
   
     return (
         <div className={styles.main}>
@@ -156,6 +163,9 @@ function Car(props: Props) {
             </Form>
           </Modal>
           {contextHolder}
+          <Modal title="扫码付款" open={isQRCodeModalOpen} onCancel={handleQRCodeCancel} footer={null}>
+            <img style={{width: '100%'}} src={qrcode} alt="" />
+          </Modal>
         </div>
     )
   }
