@@ -76,7 +76,7 @@ function App() {
       {current === '8' && <Car navToMall={()=>{setCurrent('2')}}></Car>}
       {current === '6' && <Login navBack={()=>{setCurrent('1')}}></Login>}
       <div className='app-bottom'>
-        <p>© 2025. 北京青衫国际旅行有限责任公司 版权所有. </p>
+        <p>© 2025. 北京青遇衫户外运动有限责任公司 版权所有. </p>
         <p>地址：北京市大兴区庞各庄镇瓜乡路2号2号楼1层</p>
         <p>备案号：京ICP备2025110062号-2</p>
       </div>

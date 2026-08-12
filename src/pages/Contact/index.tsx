@@ -9,7 +9,7 @@ function Contact() {
   
     return (
     <div className="contact-page">
-      <h1 className="company-name">北京青衫国际旅行有限责任公司</h1>
+      <h1 className="company-name">北京青遇衫户外运动有限责任公司</h1>
       <div className="contact-info">
         <div className="info-item">
           <h2>地址</h2>
